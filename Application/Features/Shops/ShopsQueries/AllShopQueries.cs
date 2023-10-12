@@ -29,5 +29,11 @@ namespace Application.Features.Shops.ShopsQueries
         {
             public object Shops { get; set; }
         }
+
+        public class GetShopMapper
+        {
+            public string ShopId { get; set; }
+            public string ShopName { get; set; }
+        }
     }
 }

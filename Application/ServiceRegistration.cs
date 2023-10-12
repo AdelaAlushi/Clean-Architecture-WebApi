@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Application.Features.Account.AccountCommands.AccountCommands;
+using static Application.Features.Shops.ShopsQueries.AllShopQueries;
 
 namespace Application
 {
@@ -24,6 +25,7 @@ namespace Application
                 CreateMap<UpdateProduct, Product>();
                 CreateMap<RegisterCommand, RegisterUser>();
                 CreateMap<Category, GetCategoriesMapper>();
+                CreateMap<Shops, GetShopMapper>();
             }
         }
         public static void AddMapperServices(this IServiceCollection services)
