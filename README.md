@@ -31,4 +31,4 @@ To run the project on your local machine, you can follow the steps below:
 Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/ardaguness/Clean-Architecture-WebApi
+   git clone https://github.com/adelaalushi/Clean-Architecture-WebApi
