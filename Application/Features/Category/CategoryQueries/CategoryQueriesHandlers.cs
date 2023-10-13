@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 namespace Application.Features.Category.CategoryQueries
 {
     public class CategoryQueriesHandlers :
-      IRequestHandler<GetCategories, GetCategoriesResponse>
+      IRequestHandler<GetCategories, GetCategoryResponse>,
+      IRequestHandler<GetCategoryById, GetCategoryByIdResponse>
+
     {
         readonly ICategoryRepository _categoryRepo;
         readonly IMapper _mapper;
@@ -22,12 +24,19 @@ namespace Application.Features.Category.CategoryQueries
             _mapper = mapper;
         }
 
-        public async Task<GetCategoriesResponse> Handle(GetCategories request, CancellationToken cancellationToken)
+        public async Task<GetCategoryResponse> Handle(GetCategories request, CancellationToken cancellationToken)
         {
             var categories = _categoryRepo.GetAll();
-            var mapperCategories = _mapper.Map<IEnumerable<GetCategoriesMapper>>(categories);
+            var mapperCategories = _mapper.Map<IEnumerable<GetCategoryMapper>>(categories);
 
             return new() { Categories = mapperCategories };
         }
+        public async Task<GetCategoryByIdResponse> Handle(GetCategoryById request, CancellationToken cancellationToken)
+        {
+            var category = await _categoryRepo.GetByIdAsync(request.CategoryId);
+            return new() { Category = category };
+        }
+
+
     }
 }

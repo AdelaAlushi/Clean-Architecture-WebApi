@@ -1,4 +1,5 @@
-﻿using Application.Features.Category.CategoryQueries;
+﻿using Application.Features.Category.CategoryCommands;
+using Application.Features.Category.CategoryQueries;
 using Application.Features.Product.ProductCommands;
 using Application.Features.Shops.ShopsCommands;
 using AutoMapper;
@@ -33,9 +34,14 @@ namespace Application
                 CreateMap<UpdateShops, Shops>();
                 CreateMap<Shops, GetShopMapper>();
 
+                //mapping for Register
 
                 CreateMap<RegisterCommand, RegisterUser>();
-                CreateMap<Category, GetCategoriesMapper>();
+
+                //mapping for Category
+                CreateMap<CreateCategory, Category>();
+                CreateMap<UpdateCategory, Category>();
+                CreateMap<Category, GetCategoryMapper>();
                
             }
         }

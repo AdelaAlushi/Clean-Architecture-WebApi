@@ -7,14 +7,25 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Category.CategoryQueries
 {
-    public class GetCategories:IRequest<GetCategoriesResponse>
+    public class GetCategories : IRequest<GetCategoryResponse>
     {
+
     }
-    public class GetCategoriesResponse
+    public class GetCategoryResponse
     {
-        public IEnumerable<GetCategoriesMapper> Categories { get; set; }
+        public object Categories { get; set; }
     }
-    public class GetCategoriesMapper
+
+    public class GetCategoryById : IRequest<GetCategoryByIdResponse>
+    {
+        public string CategoryId { get; set; }
+    }
+    public class GetCategoryByIdResponse
+    {
+        public object Category { get; set; }
+    }
+
+    public class GetCategoryMapper
     {
         public string Id { get; set; }
         public string Name { get; set; }

@@ -15,14 +15,14 @@ public class AccountController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpPost("register")]
+    [HttpPost("Register")]
     public async Task<IActionResult> Register(RegisterCommand command)
     {
         RegisterCommandResponse response = await _mediator.Send(command);
         return Ok(response);
     }
 
-    [HttpPost("login")]
+    [HttpPost("Login")]
     public async Task<IActionResult> Login(LoginCommand command)
     {
         LoginCommandResponse response = await _mediator.Send(command);
