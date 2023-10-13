@@ -1,5 +1,6 @@
 ﻿using Application.Features.Category.CategoryQueries;
 using Application.Features.Product.ProductCommands;
+using Application.Features.Shops.ShopsCommands;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Entities.Identity;
@@ -21,11 +22,21 @@ namespace Application
         {
             public RegisterMapper()
             {
+                //mapping for Products
+
                 CreateMap<CreateProduct, Product>();
                 CreateMap<UpdateProduct, Product>();
+
+                //mapping for Shops
+
+                CreateMap<CreateShops, Shops>();
+                CreateMap<UpdateShops, Shops>();
+                CreateMap<Shops, GetShopMapper>();
+
+
                 CreateMap<RegisterCommand, RegisterUser>();
                 CreateMap<Category, GetCategoriesMapper>();
-                CreateMap<Shops, GetShopMapper>();
+               
             }
         }
         public static void AddMapperServices(this IServiceCollection services)

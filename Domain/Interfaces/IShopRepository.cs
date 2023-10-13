@@ -12,5 +12,6 @@ namespace Domain.Interfaces
     {
 
         Task<ICollection<Shops>> GetAllShops();
+        
     }
 }

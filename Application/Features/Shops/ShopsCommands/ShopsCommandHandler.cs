@@ -18,12 +18,11 @@ namespace Application.Features.Shops.ShopsCommands
         private readonly IShopRepository _shopRepo;
         private readonly IMapper _mapper;
 
-
-        //public AllShopsCommands(IShopRepository shopRepo, IMapper mapper)
-        //{
-        //    _shopRepo = shopRepo;
-        //    _mapper = mapper;
-        //}
+        public ShopsCommandHandler(IShopRepository shopRepo, IMapper mapper)
+        {
+            _shopRepo = shopRepo;
+            _mapper = mapper;
+        }
 
         public async Task<DeleteCommandResponse> Handle(DeleteCommand request, CancellationToken cancellationToken)
         {

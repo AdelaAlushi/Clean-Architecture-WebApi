@@ -24,11 +24,11 @@ namespace WebApi
             }
             catch (Exception ex)
             {
-                // Hata yakalandığında loglama işlemi
+                
                 Log.Error("Error", ex, ex.Message);
                 Log.Error("----------------------------");
 
-                // Hata mesajını response body'ye yazma
+                
                 var response = context.Response;
                 response.ContentType = "text/plain";
                 response.StatusCode = StatusCodes.Status500InternalServerError;
