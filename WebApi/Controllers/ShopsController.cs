@@ -25,6 +25,12 @@ namespace WebApi.Controllers
             GetShopsResponse response = await _mediator.Send(query);
             return Ok(response);
         }
+        [HttpGet("GetShopById")]
+        public async Task<IActionResult> GetShopById([FromQuery] GetShopById query)
+        {
+            GetShopsByIdResponse response = await _mediator.Send(query);
+            return Ok(response);
+        }
 
         [HttpPost("CreateShops")]
         public async Task<IActionResult> CreateShop([FromBody] CreateShops query)

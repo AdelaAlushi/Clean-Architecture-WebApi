@@ -43,4 +43,9 @@ namespace Application.Features.Shops.ShopsCommands
     {
 
     }
+    public class GetShopsById : IRequest<GetShopsById>
+    {
+        public string ShopId { get; set; }
+
+    }
 }

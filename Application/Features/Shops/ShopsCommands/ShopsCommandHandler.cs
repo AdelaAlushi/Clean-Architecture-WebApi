@@ -46,5 +46,14 @@ namespace Application.Features.Shops.ShopsCommands
             await _shopRepo.AddAsync(shops);
             return new CreateShopResponse();
         }
+
+
+        public async Task<GetShopsById> Handle(GetShopsById request, CancellationToken cancellationToken)
+        {
+            var shops = _mapper.Map<Domain.Entities.Shops>(request);
+
+            await _shopRepo.AddAsync(shops);
+            return new GetShopsById();
+        }
     }
 }
