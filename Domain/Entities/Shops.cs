@@ -14,5 +14,7 @@ namespace Domain.Entities
         public string ShopName { get; set; }
 
         public string ShopAddress { get; set; }
+
+        public bool IsAvailable { get; set; }
     }
 }

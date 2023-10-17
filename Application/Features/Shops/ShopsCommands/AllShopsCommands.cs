@@ -14,6 +14,7 @@ namespace Application.Features.Shops.ShopsCommands
         public string ShopName { get; set; }
 
         public string ShopAddress { get; set; }
+        public bool IsAvailable { get; set; }
 
     }
     public class CreateShopResponse
@@ -28,6 +29,9 @@ namespace Application.Features.Shops.ShopsCommands
         public string ShopName { get; set; }
 
         public string ShopAddress { get; set; }
+
+        public bool IsAvailable { get; set; }
+
 
     }
     public class UpdateShopResponse
