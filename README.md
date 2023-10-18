@@ -23,5 +23,6 @@
 - Serilog
 - Serilog.Sinks.File
 - Microsoft.AspNetCore.Mvc.Version
+- Docker for Deployment
   
 
