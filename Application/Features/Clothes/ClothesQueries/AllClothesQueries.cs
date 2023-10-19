@@ -13,7 +13,7 @@ namespace Application.Features.Clothes.ClothesQueries
     }
     public class GetClothesResponse
     {
-        public object Products { get; set; }
+        public object Clothes { get; set; }
     }
     public class GetClothesById : IRequest<GetClothesByIdResponse>
     {

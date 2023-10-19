@@ -23,7 +23,7 @@ namespace Application.Features.Clothes.ClothesQueries
         public async Task<GetClothesResponse> Handle(GetClothes request, CancellationToken cancellationToken)
         {
             var clothes = _clothesRepo.GetAll().ToList();
-            return new() { Products = clothes };
+            return new() { Clothes = clothes };
         }
 
         public async Task<GetClothesByIdResponse> Handle(GetClothesById request, CancellationToken cancellationToken)

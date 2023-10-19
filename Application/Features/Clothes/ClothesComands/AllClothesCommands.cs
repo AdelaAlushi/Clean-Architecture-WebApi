@@ -22,7 +22,7 @@ namespace Application.Features.Clothes.ClothesComands
 
     public class UpdateClothes : IRequest<UpdateClothesResponse>
     {
-        public string Name { get; set; }
+        public string Name { get; set; } 
 
         public int Id { get; set; }
         public bool IsActive { get; set; }
