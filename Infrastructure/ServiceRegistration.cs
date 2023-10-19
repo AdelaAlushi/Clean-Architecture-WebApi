@@ -35,6 +35,8 @@ namespace Infrastructure
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IShopRepository, ShopRepository>();
+
+            services.AddTransient<IClothesRepository, ClothesRepository>();
         }
     }
 }

@@ -18,6 +18,8 @@ namespace Infrastructure.Contexts
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Shops> Shops { get; set; }
+
+        public DbSet<Clothes> Clothes { get; set; }
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var datas = ChangeTracker

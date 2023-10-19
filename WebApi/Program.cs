@@ -2,6 +2,7 @@ using Application;
 using AspNetCoreRateLimit;
 using Domain.Interfaces;
 using Infrastructure;
+using Infrastructure.Repositories;
 using Infrastructure.Services;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -47,7 +48,7 @@ builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounte
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 builder.Services.AddScoped<IUserService, UserService>();
-
+//builder.Services.AddSingleton<IClothesRepository, ClothesRepository>();
 
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
