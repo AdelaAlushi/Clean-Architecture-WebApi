@@ -12,7 +12,9 @@ namespace Application.Features.Account.AccountQueries
 {
     public class AccountQueriesResponse :
         IRequestHandler<GetUserById, GetUserByIdResponse>,
-        IRequestHandler<GetAllUsers, GetAllUsersResponse>
+        IRequestHandler<GetAllUsers, GetAllUsersResponse>,
+        IRequestHandler<DeleteCommand, DeleteCommandResponse>
+
     {
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
@@ -32,6 +34,11 @@ namespace Application.Features.Account.AccountQueries
         public async Task<GetAllUsersResponse> Handle(GetAllUsers request, CancellationToken cancellationToken)
         {
             return new() { Users = _userService.GetAllUsersAsync() };
+        }
+        public async Task<DeleteCommandResponse> Handle(DeleteCommand request, CancellationToken cancellationToken)
+        {
+            await _userService.RemoveAsync(request.Id);
+            return new DeleteCommandResponse();
         }
     }
 }

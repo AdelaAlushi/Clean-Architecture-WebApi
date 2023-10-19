@@ -1,4 +1,5 @@
-﻿using Application.Features.Category.CategoryCommands;
+﻿using Application.Features.Account.AccountQueries;
+using Application.Features.Category.CategoryCommands;
 using Application.Features.Category.CategoryQueries;
 using Application.Features.Product.ProductCommands;
 using Application.Features.Shops.ShopsCommands;
@@ -37,12 +38,15 @@ namespace Application
                 //mapping for Register
 
                 CreateMap<RegisterCommand, RegisterUser>();
+               // CreateMap<DeleteUser, DeleteUserResponse>();
 
                 //mapping for Category
                 CreateMap<CreateCategory, Category>();
                 CreateMap<UpdateCategory, Category>();
                 CreateMap<Category, GetCategoryMapper>();
                
+
+
             }
         }
         public static void AddMapperServices(this IServiceCollection services)

@@ -24,4 +24,24 @@ namespace Application.Features.Account.AccountQueries
     {
         public object Users { get; set; }
     }
+
+
+    public class DeleteCommand : IRequest<DeleteCommandResponse>
+    {
+        public string Id { get; set; }
+    }
+    public class DeleteCommandResponse
+    {
+        public string Id { get; set; }
+    }
+    //public class DeleteUser:IRequest <DeleteUserResponse>
+
+    //{
+    //    public string UserId { get; set; }
+    //}
+
+    //public class DeleteUserResponse
+    //{
+    //    public object UserId { get; set; }
+    //}
 }

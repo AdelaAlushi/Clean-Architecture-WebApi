@@ -11,5 +11,10 @@ namespace Domain.Interfaces
     {
         Task<ApplicationUser> GetUserById(string userid);
         Task<ICollection<ApplicationUser>> GetAllUsersAsync();
+
+
+        Task<HttpResponseMessage> DeleteUser(ApplicationUser userId);
+
+        Task<bool> RemoveAsync(string id);
     }
 }

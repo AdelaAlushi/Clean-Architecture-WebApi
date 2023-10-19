@@ -1,9 +1,13 @@
 using Application;
 using AspNetCoreRateLimit;
+using Domain.Interfaces;
 using Infrastructure;
+using Infrastructure.Services;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using System.Reflection;
 using WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,6 +46,11 @@ builder.Services.AddSingleton<IClientPolicyStore, MemoryCacheClientPolicyStore>(
 builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
 
 // Serilog Using
 Log.Logger = new LoggerConfiguration()

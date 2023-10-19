@@ -44,4 +44,11 @@ public class AccountController : ControllerBase
         return Ok(response);
     }
 
+    [HttpDelete("DeleteUser")]
+    public async Task<IActionResult> DeleteUser([FromQuery] DeleteCommand user)
+    {
+        DeleteCommandResponse response = await _mediator.Send(user);
+        return Ok(response);
+    }
+
 }

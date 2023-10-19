@@ -13,6 +13,7 @@ using Infrastructure.Contexts;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace Infrastructure.Services
 {
     public class UserService : GenericRepository<Product>, IUserService
@@ -21,6 +22,11 @@ namespace Infrastructure.Services
         public UserService(EFDBContext context) : base(context)
         {
             db = context;
+        }
+        public async Task<HttpResponseMessage> DeleteUser(ApplicationUser userId)
+        {
+            HttpResponseMessage returnMessage = new HttpResponseMessage();
+            return await Task.FromResult(returnMessage);
         }
 
         public async Task<ICollection<ApplicationUser>> GetAllUsersAsync()
@@ -33,5 +39,7 @@ namespace Infrastructure.Services
             var user = await db.Users.FirstOrDefaultAsync(i => i.Id == userid);
             return user;
         }
+
+       
     }
 }
