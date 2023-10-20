@@ -1,6 +1,7 @@
 ﻿using Application.Features.Account.AccountQueries;
 using Application.Features.Category.CategoryCommands;
 using Application.Features.Category.CategoryQueries;
+using Application.Features.Clothes.ClothesComands;
 using Application.Features.Product.ProductCommands;
 using Application.Features.Shops.ShopsCommands;
 using AutoMapper;
@@ -44,7 +45,11 @@ namespace Application
                 CreateMap<CreateCategory, Category>();
                 CreateMap<UpdateCategory, Category>();
                 CreateMap<Category, GetCategoryMapper>();
-               
+
+                //mapping for Clothes
+
+                CreateMap<CreateClothes, Clothes>();
+                CreateMap<UpdateClothes, Clothes>();
 
 
             }
