@@ -23,5 +23,7 @@ namespace Infrastructure.Repositories
             var shops = await db.Shops.ToListAsync();
             return shops;
         }
+
+
     }
 }

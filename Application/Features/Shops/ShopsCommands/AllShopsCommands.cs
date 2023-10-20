@@ -14,6 +14,8 @@ namespace Application.Features.Shops.ShopsCommands
         public string ShopName { get; set; }
 
         public string ShopAddress { get; set; }
+
+        public string Location { get; set; }
         public bool IsAvailable { get; set; }
 
     }
@@ -31,6 +33,8 @@ namespace Application.Features.Shops.ShopsCommands
         public string ShopAddress { get; set; }
 
         public bool IsAvailable { get; set; }
+
+        public string Location { get; set; }
 
 
     }

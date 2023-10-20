@@ -14,6 +14,8 @@ namespace Application.Features.Clothes.ClothesComands
         public int Id { get; set; }
         public bool IsActive { get; set; }
 
+        public bool IsAvailable { get; set; }
+
     }
     public class CreateClothesResponse
     {
@@ -26,6 +28,9 @@ namespace Application.Features.Clothes.ClothesComands
 
         public int Id { get; set; }
         public bool IsActive { get; set; }
+
+        public bool IsAvailable { get; set; }
+
 
     }
     public class UpdateClothesResponse

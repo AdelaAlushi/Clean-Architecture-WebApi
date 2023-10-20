@@ -34,6 +34,8 @@ namespace Application.Features.Shops.ShopsQueries
         {
             public string ShopId { get; set; }
             public string ShopName { get; set; }
+            public string Location { get; set; }
+
         }
     }
 }

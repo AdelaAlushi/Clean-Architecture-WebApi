@@ -16,6 +16,8 @@ namespace Domain.Entities
         public string Name { get; set; }
 
         public double Price { get; set; }
+
+        public bool IsAvailable { get; set; }
        
     }
 }
