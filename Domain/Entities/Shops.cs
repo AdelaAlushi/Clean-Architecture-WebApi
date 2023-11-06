@@ -13,11 +13,10 @@ namespace Domain.Entities
 
         public string ShopName { get; set; }
 
-        public string ShopAddress { get; set; }
+        public string Location { get; set; }
 
         public bool IsAvailable { get; set; }
 
 
-        public string Location { get; set; }
     }
 }
